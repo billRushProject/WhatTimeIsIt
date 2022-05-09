@@ -1,1 +1,4 @@
 # WhatTimeIsIt
+
+[ ] Show time
+[ ] Select 
