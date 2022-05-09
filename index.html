@@ -5,8 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WTIT</title>
+    <script>
+        var timeNow=new Date();
+        var hour=timeNow.getHours();
+        var minute=timeNow.getMinutes();
+        var second=timeNow.getSeconds();
+
+    </script>
 </head>
 <body>
-    
+    <div id="timeH" ></div>
+    <div id="timeM"></div>
+    <div id="timeS"></div>
 </body>
+<script>
+    document.getElementById('timeH').innerHTML= hour;
+    document.getElementById('timeM').innerHTML= minute;
+    document.getElementById('timeS').innerHTML= second;
+    alert(minuteDiv);
+</script>
 </html>
