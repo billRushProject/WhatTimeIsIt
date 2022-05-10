@@ -1,0 +1,145 @@
+/*
+Primary
+blue
+900
+#dae3f1
+800
+#b6c6e2
+700 
+#91aad4
+600
+#6c8dc6
+500
+#4771b8
+400
+#395a93
+
+Secondary
+Gray
+#717871
+
+
+brown
+#c56944
+
+Error
+Pink
+#ffa2ce
+
+Background
+white
+#f5f6f8
+*/
+.primary-100{
+    background-color: #0e1725;
+}
+.primary-200{
+    background-color: #1d2d49;
+}
+.primary-300{
+    background-color: #2b446e;
+}
+.primary-400{
+    background-color: #395a93;
+}
+.primary-500{
+    background-color: #4771b8;
+}
+.primary-600{
+    background-color: #6c8dc6;
+}
+.primary-700{
+    background-color: #91aad4;
+}
+.primary-800{
+    background-color: #b6c6e2;
+}
+
+.primary-900{
+    background-color: #dae3f1;
+}
+.secondary-100{
+    background-color: #191a19;
+}
+.secondary-200{
+    background-color: #313531;
+}
+.secondary-300{
+    background-color: #4a4f4a;
+}
+.secondary-400{
+    background-color: #636963;
+}
+.secondary-500{
+    background-color: #7c837c;
+}
+.secondary-600{
+    background-color: #969c96;
+}
+.secondary-700{
+    background-color: #b0b5b0;
+}
+.secondary-800{
+    background-color: #caceca;
+}
+.secondary-900{
+    background-color: #e5e6e5;
+}
+.third-100{
+    background-color: #27140c;
+}
+.third-200{
+    background-color: #4e2718;
+}
+.third-300{
+    background-color: #753b24;
+}
+.third-400{
+    background-color: #9c4f30;
+}
+.third-500{
+    background-color: #c3623c;
+}
+.third-600{
+    background-color: #cf8263;
+}
+.third-700{
+    background-color: #dba18a;
+}
+.third-800{
+    background-color: #e7c0b1;
+}
+.third-900{
+    background-color: #f3e0d8;
+}
+
+.error-100{
+    background-color: #330018;
+}
+.error-200{
+    background-color: #660030;
+}
+.error-300{
+    background-color: #990047;
+}
+.error-400{
+    background-color: #cc005f;
+}
+.error-500{
+    background-color: #ff0077;
+}
+.error-600{
+    background-color: #ff3392;
+}
+.error-700{
+    background-color: #ff66ad;
+}
+.error-800{
+    background-color: #ff99c9;
+}
+.error-900{
+    background-color: #ffcce4;
+}
+.background{
+    background-color: #f5f6f8;
+}
