@@ -4,25 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WTIT</title>
+    <title>WTII</title>
     <link rel="stylesheet" href="design.css">
-    
+    <link rel="stylesheet" href="layout.css">
 </head>
 <style>
-    body{
-        margin: 0px;
-        color:#dae3f1
-    }
-    .wrapper{
-        display: flex;
-        flex-direction: column;
-        height:100vh ;
-    }
-    h2{
-        font-size: 60px;
-        font-family: 'Bebas Neue', cursive;
+    .bgImg{
+        background-image: url("bg.jpg");
+        background-position: center; 
     }
     .wtiiTitle{
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center; 
@@ -53,20 +45,38 @@
         width: 500px;
         font-family: 'Bebas Neue', cursive;
         font-weight: bold;
-        
+    }
+    .title1{
+        position: absolute;
+        z-index: 2;
+    }
+    .title2{    
+        transform: translate(3px,5px);
+        position: absolute;
+        z-index: 1;
+        animation-name: titleMove;
+        animation-duration: 2s;
+    }
+
+    /* The animation code */
+    @keyframes titleMove {
+    from {transform: translate(0px,0px);}
+    to {transform: translate(3px,5px);}
     }
 </style>
 <body>
-    <div class="wrapper primary-400">
-            <div class="wtiiTitle">
-                <h2>What time is it?</h2>
+
+    <div class="wrapper primary-400 bgImg">
+            <div class="wtiiTitle ">
+                <h2 class="title1" style="color:#e7c0b1;">What time is it?</h2>
+                <h2 class="title2 " style="color: #4e2718;">What time is it?</h2>
             </div>
             <div class="time">
                 <div id="timeH" class="secondary-700" ></div>
                 <div id="timeM" class="secondary-700"></div>
                 <div id="timeS" class="secondary-700"></div>
             </div>  
-            <div class="shoutOut" >Shoutout to BoJack Horseman</div>
+            <div class="shoutOut caption" >Shoutout to BoJack Horseman</div>
     </div>
 
     </body>
