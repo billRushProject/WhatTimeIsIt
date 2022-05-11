@@ -7,6 +7,7 @@
     <title>WTII</title>
     <link rel="stylesheet" href="design.css">
     <link rel="stylesheet" href="layout.css">
+    <link rel = "icon" href = "icon.png" type = "image/x-icon">
 </head>
 <style>
     .bgImg{
@@ -19,7 +20,13 @@
         display: flex;
         justify-content: center;
         align-items: center; 
-        height: 40vh;
+        height: 35vh;
+    }
+    .iconTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        height: 20vh;   
     }
     .time, .shoutOut{
         width: 100%;
@@ -58,6 +65,13 @@
         animation-name: titleMove;
         animation-duration: 2s;
     }
+    .icon{
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 10px #b6c6e2 ;
+    }
+
 
     /* The animation code */
     @keyframes titleMove {
@@ -108,15 +122,19 @@
 
     <div class="wrapper primary-400 bgImg">
             <div class="wtiiTitle ">
+
                 <h2 class="title1" style="color:#e7c0b1;">What time is it?</h2>
                 <h2 class="title2 " style="color: #4e2718;">What time is it?</h2>
+                
             </div>
+            
             <div class="time">
                 <div id="timeH" class="secondary-700" ></div>
                 <div id="timeM" class="secondary-700"></div>
                 <div id="timeS" class="secondary-700"></div>
             </div>  
             <div class="shoutOut caption" >Shoutout to BoJack Horseman</div>
+            <div class="iconTitle "><img class="icon" src="icon.png" alt=""></div>
     </div>
 
     </body>
