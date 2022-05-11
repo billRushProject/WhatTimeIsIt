@@ -12,6 +12,7 @@
     .bgImg{
         background-image: url("bg.jpg");
         background-position: center; 
+        background-repeat:inherit
     }
     .wtiiTitle{
         position: relative;
@@ -62,6 +63,45 @@
     @keyframes titleMove {
     from {transform: translate(0px,0px);}
     to {transform: translate(3px,5px);}
+    }
+    @media only screen and (max-width: 600px) {
+
+        body {
+            background-color: lightblue;
+        }
+        .wtiiTitle{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            
+        }
+        .time div{
+            padding: 5px;
+            border-radius: 15px;
+            margin: 0px;
+            width: 70px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 40px;
+            color: #1d2d49;
+            box-shadow:  5px 5px 10px #1d2d49;
+        }
+        h2{
+            font-size:60px;
+        }
+        .time, .shoutOut{
+            width: 100%;
+            padding: 10px 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            margin: 0 auto;
+        }
+        .shoutOut{
+            padding: 50px 0px;
+        }
     }
 </style>
 <body>
