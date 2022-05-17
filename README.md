@@ -2,7 +2,7 @@
 
 ## Function Requirement
 - [-] Show real time time 
-- [ ] Select location?
+- [-] Select location
 
 ## UI design
 - [-] Text
