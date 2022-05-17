@@ -71,6 +71,37 @@
         border-radius: 50%;
         box-shadow: 5px 5px 10px #b6c6e2 ;
     }
+    .timezone{
+
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .timezone > div{
+        font-family: 'Bebas Neue', cursive;
+        font-weight:bold;
+        font-size: 13px;
+        text-align: center;
+        color: #b0b5b0;
+
+        border-radius: 8px;
+        background-color: #0e1725;
+        
+        padding: 10px 15px;
+        margin: 25px 10px;
+    }
+    .timezone > div:hover{
+        
+        color: black;
+        border-radius: 8px;
+        background-color: white;
+        
+        padding: 10px 15px;
+        margin: 25px 10px;
+        box-shadow: 3px 3px 5px black;
+        ;
+    }
 
 
     /* The animation code */
@@ -116,6 +147,10 @@
         .shoutOut{
             padding: 50px 0px;
         }
+        .timezone{
+            display: grid;
+            grid-template-columns: auto auto ;
+        }
     }
 </style>
 <body>
@@ -133,22 +168,133 @@
                 <div id="timeM" class="secondary-700"></div>
                 <div id="timeS" class="secondary-700"></div>
             </div>  
-            <div class="shoutOut caption" >Shoutout to BoJack Horseman</div>
+            <div class="shoutOut caption" id="caption" >Shoutout to BoJack Horseman</div>
             <div class="iconTitle "><img class="icon" src="icon.png" alt=""></div>
-    </div>
-
+            <div class="timezone">
+                <div onclick="setLocal()">LOCAL</div>
+                <div onclick="setTKY()">Tokayo</div>
+                <div onclick="setEN()">England</div>
+                <div onclick="setNY()">New York</div>
+            </div>
+            </div>
+   
     </body>
 <script>
-    function showTime(){
+    //HK, NY, TKY, EN
+    var lname="";
+    var myInterval=setInterval(getlocaltiontime,1000);
+    function showTime(locationNamePick){
+        switch(locationNamePick) {
+            case "EN":
+                // code block    
+                clearInterval(myInterval);
+                myInterval=setInterval(getEnglandtime,1000);
+                break;
+            case "NY":
+                // code block
+                clearInterval(myInterval);
+                myInterval=setInterval(getNewYorktime,1000);
+                break;
+            case "TKY":
+                // code block
+                clearInterval(myInterval);
+                myInterval=setInterval(gettokoyotime,1000);
+                break;
+            case "HK":
+                // code block
+                clearInterval(myInterval);
+                myInterval=setInterval(getHKtime,1000);
+                break;
+            default:
+                // code block
+                clearInterval(myInterval);
+                myInterval=setInterval(getlocaltiontime,1000);
+            }
+    }
+    function splitDateTime(timeDate){
+        var array=timeDate.split(" ");
+        var arrayTime=array[1].split(":");
+        return arrayTime;
+    }
+    function setAlerm(h,m,s){
+        document.getElementById('timeH').innerHTML= h;
+        document.getElementById('timeM').innerHTML= m;
+        document.getElementById('timeS').innerHTML= s;
+    }
+    function setHK(){
+        lname="HK";
+        document.getElementById('caption').innerHTML= "Hong Kong";
+        showTime(lname);
+    }
+    function setTKY(){
+        lname="TKY";
+        document.getElementById('caption').innerHTML= "TOKOYA";
+        showTime(lname);
+    }
+    function setNY(){
+        lname="NY";    
+        document.getElementById('caption').innerHTML= "New York";
+        showTime(lname);
+    }
+    function setEN(){
+        lname="EN";
+        
+        document.getElementById('caption').innerHTML= "England";
+        showTime(lname);
+    }
+    function setLocal(){
+        lname="";
+        document.getElementById('caption').innerHTML= "Local";
+        showTime(lname);
+    }
+    function getEnglandtime(){
+        lname="EN";
+        var options = { hour12: false,timeZone: 'Europe/London' };
+        var engtime = new Date().toLocaleString('en-US', options);
+        var arrayTime=splitDateTime(engtime);
+        var hour=arrayTime[0];
+        var minute=arrayTime[1];
+        var second=arrayTime[2];
+        setAlerm(hour,minute,second);
+
+    }
+    
+    function getHKtime(){
+        var options = { hour12: false,timeZone: 'Asia/Hong_Kong' };
+        var hktime = new Date().toLocaleString('en-US', options);
+        var arrayTime=splitDateTime(hktime);
+        var hour=arrayTime[0];
+        var minute=arrayTime[1];
+        var second=arrayTime[2];
+        setAlerm(hour,minute,second);
+    }
+    
+    function gettokoyotime(){
+        var options = { hour12: false,timeZone: 'Asia/Tokyo' };
+        var tokoyoTime = new Date().toLocaleString('en-US', options);
+        var arrayTime=splitDateTime(tokoyoTime);
+        var hour=arrayTime[0];
+        var minute=arrayTime[1];
+        var second=arrayTime[2];
+        setAlerm(hour,minute,second);
+    }
+    function getNewYorktime(){
+        var options = { hour12: false,timeZone: 'America/New_York' };
+        var tokoyoTime = new Date().toLocaleString('en-US', options);
+        var arrayTime=splitDateTime(tokoyoTime);
+        var hour=arrayTime[0];
+        var minute=arrayTime[1];
+        var second=arrayTime[2];
+        setAlerm(hour,minute,second);
+    }
+    function getlocaltiontime(){
         var timeNow=new Date();
+        
         var hour=timeNow.getHours();
         var minute=timeNow.getMinutes();
         var second=timeNow.getSeconds();
-        document.getElementById('timeH').innerHTML= hour;
-        document.getElementById('timeM').innerHTML= minute;
-        document.getElementById('timeS').innerHTML= second;
+        setAlerm(hour,minute,second);
     }
 
-    setInterval(showTime,1000);
 </script>
 </html>
